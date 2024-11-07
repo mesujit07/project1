@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset Password</title>
+</head>
+<style>
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: #f4f4f9;
+}
+
+h2 {
+	color: blue;
+	text-align: center;
+}
+</style>
+<body>
+	<div class="container">
+		<h1 style="color: blue">Reset Password</h1>
+	
+		<form action="/reset" method="post">
+			<label for="username">Username:</label><br> 
+			<input type="text" id="username" name="username" required><br><br>
+
+			<label for="password">New Password:</label><br> 
+			<input type="password" id="password" name="password" required><br><br>
+
+			<input type="submit" value="Reset Password"><br><br>
+		</form>
+
+		<span>Remember your password?</span>
+		<a href="/login">Login here</a>
+
+		<p style="color: red;" th:if="${error}" th:text="${error}"></p>
+		  <h1 style="color: green;" th:if="${message}" th:text="${message}"></h1>
+	</div>
+</body>
+</html>

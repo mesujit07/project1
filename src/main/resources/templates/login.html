@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+</head>
+<style>
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: #f4f4f9;
+}
+
+h2 {
+	color: blue;
+	text-align: center;
+}
+</style>
+<body>
+	<div class="container">
+	 <h2 style="color: green;" th:if="${reset}" th:text="${reset}"></h2>
+	 <h2 style="color: green;" th:if="${info}" th:text="${info}"></h2>
+		<h1 style="color: blue">
+			Login
+			</h1>
+
+			<form action="/login" method="post">
+				<label for="username">Username:</label><br> <input type="text"
+					id="username" name="username" required><br> <br>
+				<label for="password">Password:</label><br> <input
+					type="password" id="password" name="password" required><br>
+				<br> 
+				<input type="submit" value="Login"><br><br>
+			</form>
+				
+			<p style="color: red;" th:if="${error}" th:text="${error}"></p>
+			<p>
+				<a href="/reset">Forgot Password?</a>
+			</p>
+			<span>Dont have an account?</span>
+			<a href="/register">Register here</a><br><br>
+			
+			<span>Want to see all records</span>
+			<a href="/display">click here</a>
+	</div>
+
+
+</body>
+</html>

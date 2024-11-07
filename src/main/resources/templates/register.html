@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Form</title>
+</head>
+<style>
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: #f4f4f9;
+}
+
+h2 {
+	color: blue;
+	text-align: center;
+}
+</style>
+<body>
+	<div class="container">
+		<h1 style="color: brown">
+			Register Form
+			</h1>
+	
+			<form action="/register" method="post">
+				<label for="username">Username:</label><br> <input type="text"
+					id="username" name="username" ><br> <br>
+				<label for="password">Set a Password:</label><br> <input
+					type="password" id="password" name="password" ><br>
+				<br> <label for="email">Email:</label><br> <input
+					type="email" id="email" name="email" ><br> <br>
+						<label for:"DOB">DOB
+				</label><br>
+				<input type="date" id:"dob" name="dob" ><br><br>
+					<input type="submit" value="register"><br><br>
+			</form>
+			
+				
+			<span>Already have an account?</span>
+			<a href="/login">login here</a>
+			
+			<p style="color: red;" th:if="${error}" th:text="${error}"></p>
+	</div>
+
+
+</body>
+</html>
